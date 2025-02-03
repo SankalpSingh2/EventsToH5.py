@@ -128,7 +128,7 @@ if __name__ == "__main__":
     events = mask_region_filter(events, (780, 810), (115, 145)) # can change rectangular filter
     frames = process_events_to_frames(events)
 
-    # save to h5
+    # save to h5 file
     with h5py.File('processed_events.h5', 'w') as hf:
         for i, frame in enumerate(frames):
             hf.create_dataset(f'frame_{i:04d}', data=frame)
